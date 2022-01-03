@@ -24,5 +24,15 @@ namespace ExperimentWithControls
         {
             InitializeComponent();
         }
+
+        private void numberTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            number.Text = numberTextBox.Text;
+        }
+
+        private void numerTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e) //Only accept input that’s made up of numbers, and reject any input that isn’t a number.
+        {
+            e.Handled = !int.TryParse(e.Text, out int result); 
+        }
     }
 }
