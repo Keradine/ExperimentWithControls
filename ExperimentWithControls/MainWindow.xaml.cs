@@ -30,9 +30,9 @@ namespace ExperimentWithControls
             number.Text = numberTextBox.Text;
         }
 
-        private void numerTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e) //Only accept input that’s made up of numbers, and reject any input that isn’t a number.
+        private void numberTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = !int.TryParse(e.Text, out int result); 
+            e.Handled = !int.TryParse(e.Text, out int result);
         }
     }
 }
